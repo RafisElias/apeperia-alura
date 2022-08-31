@@ -4,7 +4,7 @@
   max-width: 815px;
   display: inline-block;
   white-space: normal;
-}      
+}
 
 .listaDeArtigos {
   overflow: hidden;
@@ -20,13 +20,13 @@
 }
 
 
-.listaDeArtigos-item:not(:target):first-child{
+/* .listaDeArtigos-item:not(:target):first-child{
   display: inline-block;
 }
 
 .listaDeArtigos-item:target {
   display: inline-block;
-}
+} */
 
 
 
@@ -86,4 +86,3 @@
 .listaDeArtigos-slider-item--ativo {
   background: hsla(200, 70%, 0%, .6);
 }
-
