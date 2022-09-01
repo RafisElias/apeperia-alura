@@ -16,7 +16,6 @@ indicadorSlideAtual.textContent = "(Slide Atual)";
 // Percorre todos os botoes controladores
 btns.forEach(function (btn) {
   btn.addEventListener('click', () => {
-    btn.href = 'javascript:void(0)';
 
     for (const noticia of [...document.querySelectorAll('.listaDeArtigos-item')]) {
       noticia.style.display = btn.getAttribute('data-slideritem') === noticia.getAttribute('data-noticia') ? 'block' : 'none';

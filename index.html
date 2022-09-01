@@ -32,6 +32,10 @@
 
     <script src="js/carousel.js" defer></script>
     <script src="js/dialog.js" defer></script>
+    <script src="js/validacao-cep.js" defer></script>
+    <script src="js/mailcheck.js" defer></script>
+    <script src="js/mailcheck-config.js" defer></script>
+
     <meta name="viewport" content="width=device-width" />
   </head>
 
@@ -455,39 +459,6 @@
             </button>
           </form>
         </dialog>
-
-        <!-- <div
-          class="dialogNewsletter"
-          id="dialogNewsletter"
-          role="dialog"
-          aria-labelledby="modal-title"
-        >
-          <div class="dialogNewsletter-body">
-            <h2 class="dialogNewsletter-titulo" id="modal-title">
-              News sem spam
-            </h2>
-            <h3 class="dialogNewsletter-texto">
-              Assine nossa newsletter para receber notícias técnicas sem spam!
-            </h3>
-            <form class="dialogNewsletter-form">
-              <label class="dialogNewsletter-label" for="email-news-latter">
-                Email:
-              </label>
-              <input
-                type="email"
-                id="email-news-latter"
-                class="dialogNewsletter-campo"
-                placeholder="Digite seu e-mail..."
-              />
-              <button class="dialogNewsletter-btn" type="submit">
-                Assinar newsletter
-              </button>
-              <button class="dialogNewsletter-fechar" type="button">X</button>
-            </form>
-          </div>
-          <div class="dialogNewsletter-overlay"></div>
-        </div> -->
-        <!--fim .dialogNewsletter-->
       </section>
       <!--fim .secaoDestaques-->
 
@@ -510,30 +481,31 @@
                   id="nome"
                   placeholder="Nome..."
                   class="contatoCampo--validouFoi"
-                  value=""
-                  required=""
+                  required
                 />
               </div>
 
-              <div class="contatoCampo contatoCampo--erro">
+              <div class="contatoCampo">
                 <label for="email">Email: </label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   placeholder="Email..."
-                  class="contatoCampo--validouErro"
-                  required=""
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  required
                 />
-                <span class="contatoCampo-msg contatoCampo-msg--erro">
-                  Você quis dizer <a href="#">gmail.com?</a>
+                <span
+                  id="sugestao"
+                  class="contatoCampo-msg contatoCampo-msg--erro"
+                >
                 </span>
               </div>
 
               <div class="contatoCampo contatoCampo--erro">
                 <label for="telefone">Telefone: </label>
                 <input
-                  type="text"
+                  type="tel"
                   name="telefone"
                   id="telefone"
                   class="contatoCampo--validouErro"
@@ -552,7 +524,7 @@
                   id="cep"
                   maxlength="8"
                   placeholder="Exemplo: 04101-300"
-                  required=""
+                  required
                 />
               </div>
 
